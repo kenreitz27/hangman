@@ -34,6 +34,7 @@ class HangmanWord:
                 correct_letter = True
             new_answer.append(hang_letter)
         self.word = new_answer
+        self.set_guessed()
         return correct_letter
 
     def count_remaining(self) -> int:
@@ -47,5 +48,5 @@ class HangmanWord:
         return len(self.word)
 
     def set_guessed(self):
-        if self.count_remaining() == self.count_total():
+        if self.count_remaining() == 0:
             self.guessed = True
